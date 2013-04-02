@@ -1,43 +1,43 @@
 # Airbnb JavaScript Style Guide() {
 
-*A mostly reasonable approach to JavaScript*
+*Uma boa abordagem para JavaScript*
 
 
-## <a name='TOC'>Table of Contents</a>
+## <a name='TOC'>Índice</a>
 
-  1. [Types](#types)
-  1. [Objects](#objects)
+  1. [Tipos](#types)
+  1. [Objetos](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
+  1. [Funções](#functions)
+  1. [Propriedades](#properties)
+  1. [Variáveis](#variables)
   1. [Hoisting](#hoisting)
-  1. [Conditional Expressions & Equality](#conditionals)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
+  1. [Expressões Condicionais & Comparações](#conditionals)
+  1. [Blocos](#blocks)
+  1. [Comentários](#comments)
+  1. [Espaços em branco](#whitespace)
   1. [Leading Commas](#leading-commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-coercion)
+  1. [Ponto e vírgula](#semicolons)
+  1. [Casting & Coerção de Tipos](#type-coercion)
   1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Constructors](#constructors)
-  1. [Modules](#modules)
+  1. [Métodos Acessores](#accessors)
+  1. [Construtores](#constructors)
+  1. [Módulos](#modules)
   1. [jQuery](#jquery)
-  1. [ES5 Compatibility](#es5)
-  1. [Testing](#testing)
+  1. [Compatibilidade EcmaScript5 ](#es5)
+  1. [Testes](#testing)
   1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
+  1. [Conteúdo](#resources)
+  1. [Empresas utilizando](#in-the-wild)
+  1. [Traduções](#translation)
   1. [The JavaScript Style Guide Guide](#guide-guide)
-  1. [Contributors](#contributors)
-  1. [License](#license)
+  1. [Contribuidores](#contributors)
+  1. [Licença](#license)
 
-## <a name='types'>Types</a>
+## <a name='types'>Tipos</a>
 
-  - **Primitives**: When you access a primitive type you work directly on its value
+  - **Primitivos**: Quando voce acessa um tipo primitivo voce lida diretamente com seu valor.
 
     + `string`
     + `number`
@@ -53,7 +53,7 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value
+  - **Complexos**: Quando voce acessa um tipo complexo voce lida com a referência para seu valor.
 
     + `object`
     + `array`
@@ -70,9 +70,9 @@
 
     **[[⬆]](#TOC)**
 
-## <a name='objects'>Objects</a>
+## <a name='objects'>Objetos</a>
 
-  - Use the literal syntax for object creation.
+  - Use a sintaxe literal para criação de objetos.
 
     ```javascript
     // bad
@@ -82,7 +82,7 @@
     var item = {};
     ```
 
-  - Don't use [reserved words](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) as keys.
+  - Não use [reserved words](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) como chaves.
 
     ```javascript
     // bad
@@ -103,7 +103,7 @@
 
 ## <a name='arrays'>Arrays</a>
 
-  - Use the literal syntax for array creation
+  - Use a sintaxe literal para a criação de Arrays.
 
     ```javascript
     // bad
@@ -113,7 +113,7 @@
     var items = [];
     ```
 
-  - If you don't know array length use Array#push.
+  - Se voce não sabe o tamanho do array use Array#push.
 
     ```javascript
     var someStack = [];
@@ -126,7 +126,7 @@
     someStack.push('abracadabra');
     ```
 
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - Quando voce precisar copiar um Array utilize Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -147,7 +147,7 @@
 
 ## <a name='strings'>Strings</a>
 
-  - Use single quotes `''` for strings
+  - Use aspas simples `''` para strings
 
     ```javascript
     // bad
@@ -163,8 +163,8 @@
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
-  - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
+  - Strings maiores que 80 caracteres devem ser escritas em múltiplas linhas e usar concatenação.
+  - Nota: Se muito usado, strings longas com concatenação podem impactar na performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
     // bad
@@ -188,7 +188,7 @@
       'fast.';
     ```
 
-  - When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+  - Quando for construir uma string programaticamente, use Array#join ao invés de concatenação de strings. Principalmente para o IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items,
@@ -234,9 +234,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='functions'>Functions</a>
+## <a name='functions'>Funções</a>
 
-  - Function expressions:
+  - Declarando Funções:
 
     ```javascript
     // anonymous function expression
@@ -255,8 +255,8 @@
     })();
     ```
 
-  - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - Nunca declare uma função em um escopo que não seja de uma função (if, while, etc). Ao invés, atribua a função para uma variavel. Os Browsers irão deixar voce fazer isso, mas a interpretação disso não é legal. Fazendo isso voce pode ter más notícias a qualquer momento.
+  - **Nota:** A ECMA-262 define um `bloco` como uma lista de instruções. A declaração de uma função não é uma instrução. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -274,7 +274,7 @@
     }
     ```
 
-  - Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
+  - Nunca nomeie um parâmetro como `arguments`. Isso sobrescrevá o objeto `arguments` que é passado para cada função.
 
     ```javascript
     // bad
@@ -294,7 +294,7 @@
 
 ## <a name='properties'>Properties</a>
 
-  - Use dot notation when accessing properties.
+  - Use ponto `.` para acessar propriedades.
 
     ```javascript
     var luke = {
@@ -309,7 +309,7 @@
     var isJedi = luke.jedi;
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+  - Use colchetes `[]` para acessar propriedades através de uma variável.
 
     ```javascript
     var luke = {
@@ -327,9 +327,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='variables'>Variables</a>
+## <a name='variables'>Variáveis</a>
 
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+  - Sempre use `var` para declarar variáveis. Não fazer isso irá resultar em variáveis globais. Devemos evitar poluir o namespace global. O Capitão Planeta já nos alertou disso.
 
     ```javascript
     // bad
@@ -339,7 +339,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline.
+  - Use somenete uma declaração `var` para múltiplas variáveis e declares cada variável em uma nova linha.
 
     ```javascript
     // bad
@@ -353,7 +353,7 @@
         dragonball = 'z';
     ```
 
-  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+  - Declare as variáveis que voce não vai estipular valor por último. É útil no futuro, quando voce precisar atribuir valor para ela dependendo do valor da variável já declarada.
 
     ```javascript
     // bad
@@ -375,7 +375,7 @@
         i;
     ```
 
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+  - Defina variáveis no topo do escopo onde ela se encontra. Isso ajuda a evitar problemas com declaração de variáveis e hoisting.
 
     ```javascript
     // bad
