@@ -20,7 +20,7 @@
   1. [Leading Commas](#leading-commas)
   1. [Ponto e vírgula](#semicolons)
   1. [Casting & Coerção de Tipos](#type-coercion)
-  1. [Naming Conventions](#naming-conventions)
+  1. [Convenções de nomenclatura](#naming-conventions)
   1. [Métodos Acessores](#accessors)
   1. [Construtores](#constructors)
   1. [Módulos](#modules)
@@ -530,14 +530,14 @@
 ## <a name='conditionals'>Expressões Condicionais & Comparações</a>
 
   - Use `===` e `!==` ao invés de `==` e `!=`.
-  - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
+  - Expressões condicionais são interpretadas usando coerção de tipos e seguem as seguintes regras:
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evalute to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Objeto** equivale a **true**
+    + **Undefined** equivale a **false**
+    + **Null** equivale a **false**
+    + **Booleans** equivalem a **o valor do boolean**
+    + **Numbers** equivalem a **false** se **+0, -0, or NaN**, senão **true**
+    + **Strings** equivalem a **false** se são vazias `''`, senão **true**
 
     ```javascript
     if ([0]) {
@@ -546,7 +546,7 @@
     }
     ```
 
-  - Use shortcuts.
+ - Use atalhos.
 
     ```javascript
     // bad
@@ -570,14 +570,14 @@
     }
     ```
 
-  - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
+  - Para mais informações veja [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) por Angus Croll
 
     **[[⬆]](#TOC)**
 
 
 ## <a name='blocks'>Blocks</a>
 
-  - Use braces with all multi-line blocks.
+  - Use chaves para todos os blocos com mais de uma linha.
 
     ```javascript
     // bad
@@ -604,9 +604,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='comments'>Comments</a>
+## <a name='comments'>Comentários</a>
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - Use `/** ... */` para comentários com mais de uma linha. Inclua uma descrição e especifique tipos e valores para todos os parametros e retornos.
 
     ```javascript
     // bad
@@ -638,7 +638,7 @@
     }
     ```
 
-  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an emptyline before the comment.
+  - Use `//` para comentários de uma linha. Coloque comentários de uma linha acima da expressão. Deixe uma linha em branco antes de cada comentário.
 
     ```javascript
     // bad
@@ -668,7 +668,7 @@
     }
     ```
 
-  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se voce está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado.
 
   - Use `// FIXME:` to annotate problems
 
@@ -697,9 +697,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='whitespace'>Whitespace</a>
+## <a name='whitespace'>Espaços em branco</a>
 
-  - Use soft tabs set to 2 spaces
+  - Use tabs com 2 espaços
 
     ```javascript
     // bad
@@ -717,7 +717,7 @@
     ∙∙var name;
     }
     ```
-  - Place 1 space before the leading brace.
+  - Coloque um espaço antes da chave que abre o escopo da função.
 
     ```javascript
     // bad
@@ -742,7 +742,7 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
-  - Place an empty newline at the end of the file.
+  - Coloque uma linha em branco no final do arquivo.
 
     ```javascript
     // bad
@@ -759,7 +759,7 @@
 
     ```
 
-  - Use indentation when making long method chains.
+  - Use identação quando encadear vários métodos.
 
     ```javascript
     // bad
@@ -827,7 +827,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='semicolons'>Semicolons</a>
+## <a name='semicolons'>Ponto e vírgula</a>
 
   - **Yup.**
 
@@ -854,9 +854,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='type-coercion'>Type Casting & Coercion</a>
+## <a name='type-coercion'>Casting & Coerção de tipos</a>
 
-  - Perform type coercion at the beginning of the statement.
+  - Faça coerção de tipos no inicio da expressão.
   - Strings:
 
     ```javascript
@@ -875,8 +875,8 @@
     var totalScore = this.reviewScore + ' total score';
     ```
 
-  - Use `parseInt` for Numbers and always with a radix for type casting.
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - Use `parseInt` para Numbers e sempre informe a base de conversão.
+  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) [performance reasons](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
 
     ```javascript
     var inputValue = '4';
@@ -926,9 +926,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='naming-conventions'>Naming Conventions</a>
+## <a name='naming-conventions'>Convenções de nomenclatura</a>
 
-  - Avoid single letter names. Be descriptive with your naming.
+  - Não use apenas um caracter, seja descritivo.
 
     ```javascript
     // bad
@@ -942,7 +942,7 @@
     }
     ```
 
-  - Use camelCase when naming objects, functions, and instances
+  - Use camelCase quando nomeando objetos, funções e instâncias.
 
     ```javascript
     // bad
@@ -962,7 +962,7 @@
     });
     ```
 
-  - Use PascalCase when naming constructors or classes
+  - Use PascalCase when nomeando construtores.
 
     ```javascript
     // bad
@@ -984,7 +984,7 @@
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties
+  - Use um underscore `_` como primeiro caracter no nome de propriedades privadas.
 
     ```javascript
     // bad
@@ -995,7 +995,7 @@
     this._firstName = 'Panda';
     ```
 
-  - When saving a reference to `this` use `_this`.
+  - Quando for guardar referência para `this` use `_this`.
 
     ```javascript
     // bad
@@ -1023,7 +1023,7 @@
     }
     ```
 
-  - Name your functions. This is helpful for stack traces.
+  - Nomeie suas funções. Ajuda bastante quando for analisar pilhas de erro.
 
     ```javascript
     // bad
@@ -1040,10 +1040,10 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='accessors'>Accessors</a>
+## <a name='accessors'>Métodos Acessores</a>
 
-  - Accessor functions for properties are not required
-  - If you do make accessor functions use getVal() and setVal('hello')
+  - Métodos acessores de propriedades não são obrigatórios.
+  - Se voce vai criar métodos acessores utilize getVal() e setVal('hello')
 
     ```javascript
     // bad
@@ -1059,7 +1059,7 @@
     dragon.setAge(25);
     ```
 
-  - If the property is a boolean, use isVal() or hasVal()
+  - Se a propriedade é um boolean, use isVal() ou hasVal()
 
     ```javascript
     // bad
@@ -1073,7 +1073,7 @@
     }
     ```
 
-  - It's okay to create get() and set() functions, but be consistent.
+  - Tudo bem se voce criar os métodos get() e set(), mas seja consistente.
 
     ```javascript
     function Jedi(options) {
@@ -1094,7 +1094,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='constructors'>Constructors</a>
+## <a name='constructors'>Construtores</a>
 
   - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
