@@ -82,7 +82,7 @@
     var item = {};
     ```
 
-  - Não use [reserved words](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) como chaves.
+  - Não use [palavras reservadas](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) como chaves.
 
     ```javascript
     // ruim
@@ -126,7 +126,7 @@
     someStack.push('abracadabra');
     ```
 
-  - Quando voce precisar copiar um Array utilize Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - Quando precisar copiar um Array utilize Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -239,24 +239,24 @@
   - Declarando Funções:
 
     ```javascript
-    // anonymous function expression
+    // definindo uma função anônima
     var anonymous = function() {
       return true;
     };
 
-    // named function expression
+    // definindo uma função nomeada
     var named = function named() {
       return true;
     };
 
-    // immediately-invoked function expression (IIFE)
+    // função imediatamente invocada (IIFE)
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
   - Nunca declare uma função em um escopo que não seja de uma função (if, while, etc). Ao invés, atribua a função para uma variavel. Os Browsers irão deixar voce fazer isso, mas a interpretação disso não é legal. Fazendo isso voce pode ter más notícias a qualquer momento.
-  - **Nota:** A ECMA-262 define um `bloco` como uma lista de instruções. A declaração de uma função não é uma instrução. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - **Nota:** A ECMA-262 define um `bloco` como uma lista de instruções. A declaração de uma função não é uma instrução. [Leia em ECMA-262's](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // ruim
@@ -441,24 +441,23 @@
   - Declarações de váriaveis durante todo o escopo da função são elevadas ao topo função com valor atribuído `undefined`. Esse comportamento é chamado de `hoisting`.
 
     ```javascript
-    // we know this wouldn't work (assuming there
-    // is no notDefined global variable)
+    // sabemos que isso não irá funcionar (assumindo que
+    // não exista uma variável global chamada `notDefined`)
     function example() {
-      console.log(notDefined); // => throws a ReferenceError
+      console.log(notDefined); // => lança uma ReferenceError
     }
 
-    // creating a variable declaration after you
-    // reference the variable will work due to
-    // variable hoisting. Note: the assignment
-    // value of `true` is not hoisted.
+    // Declarar uma variável depois de ter referenciado
+    // a mesma irá funcionar pelo comportamento do `hoist`
+    // Nota: a atribuição do valor `true` não é afetada por `hoisting`.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     }
 
-    // The interpreter is hoisting the variable
-    // declaration to the top of the scope.
-    // Which means our example could be rewritten as:
+    // O interpretador fez `hoisting` para a declaração
+    // da variável. Isso significa que nosso exemplo pode
+    // ser reescrito como:
     function example() {
       var declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
@@ -495,8 +494,8 @@
       };
 
 
-      // the same is true when the function name
-      // is the same as the variable name.
+      // O mesmo acontece quando o nome da função
+      // é o mesmo da variável.
       function example() {
         console.log(named); // => undefined
 
@@ -542,7 +541,7 @@
     ```javascript
     if ([0]) {
       // true
-      // An array is an object, objects evaluate to true
+      // Um array é um objeto, objetos equivalem a `true`.
     }
     ```
 
@@ -876,7 +875,7 @@
     ```
 
   - Use `parseInt` para Numbers e sempre informe a base de conversão.
-  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) [performance reasons](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
+  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
 
     ```javascript
     var inputValue = '4';
@@ -901,9 +900,9 @@
 
     // bom
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseInt era a razão do código ser lento.
+     * Deslocando bits a String faz coerção para Number
+     * muito mais rápido.
      */
     var val = inputValue >> 0;
     ```
