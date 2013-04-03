@@ -466,7 +466,7 @@
     }
     ```
 
-  - Funções anônimas fazem `hoist` para o nome da sua variável, não para a atribuição da função.
+  - Funções anônimas fazem `hoist` para o nome da sua variável, não para a corpo da função.
 
     ```javascript
     function example() {
