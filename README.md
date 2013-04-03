@@ -942,7 +942,7 @@
     }
     ```
 
-  - Use camelCase quando nomeando objetos, funções e instâncias.
+  - Use camelCase quando for nomear objetos, funções e instâncias.
 
     ```javascript
     // bad
@@ -962,7 +962,7 @@
     });
     ```
 
-  - Use PascalCase when nomeando construtores.
+  - Use PascalCase quando for nomear construtores.
 
     ```javascript
     // bad
