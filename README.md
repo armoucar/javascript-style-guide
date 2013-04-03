@@ -575,7 +575,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='blocks'>Blocks</a>
+## <a name='blocks'>Blocos</a>
 
   - Use chaves para todos os blocos com mais de uma linha.
 
@@ -1096,7 +1096,7 @@
 
 ## <a name='constructors'>Construtores</a>
 
-  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto. TODO: Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
     ```javascript
     function Jedi() {
@@ -1124,7 +1124,7 @@
     };
     ```
 
-  - Methods can return `this` to help with method chaining.
+  - Métodos podem retornar `this` para encadear novas chamadas.
 
     ```javascript
     // bad
@@ -1159,7 +1159,7 @@
     ```
 
 
-  - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - Tudo bem em escrever um toString() customizado. Apenas garanta que ele sempre irá funcionar e que não altera nenhum estado.
 
     ```javascript
     function Jedi(options) {
@@ -1179,12 +1179,12 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='modules'>Modules</a>
+## <a name='modules'>Módulos</a>
 
-  - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated.
-  - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
-  - Add a method called noConflict() that sets the exported module to the previous version and returns this one.
-  - Always declare `'use strict';` at the top of the module.
+  - Um módulo deve começar com `!`. Isso garante que não haverá erros em produção caso os scripts sejam concatenados e um módulo não termine com ponto e vírgula.
+  - Nomeie o arquivo em formato camelCase, coloque em uma pasta com o mesmo nome e procure  o nome da função que é exportada.
+  - Adicione um método noConflict() que exporta o módulo antigo e retorna o módulo que foi criado com o mesmo nome.
+  - Sempre declare `'use strict';` no topo do módulo.
 
     ```javascript
     // fancyInput/fancyInput.js
@@ -1212,7 +1212,7 @@
 
 ## <a name='jquery'>jQuery</a>
 
-  - Prefix jQuery object variables with a `$`.
+  - Nomeie objetos jQuery com o prefixo `$`.
 
     ```javascript
     // bad
@@ -1222,7 +1222,7 @@
     var $sidebar = $('.sidebar');
     ```
 
-  - Cache jQuery lookups.
+  - Guarde as consultas jQuery para reuso.
 
     ```javascript
     // bad
@@ -1249,8 +1249,8 @@
     }
     ```
 
-  - For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - Use `find` with scoped jQuery object queries.
+  - Para pesquisas no DOM use o modo Cascata `$('.sidebar ul')` ou pai > filho `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - Use `find` em objetos jQuery que estão armazenados em variáveis.
 
     ```javascript
     // bad
@@ -1275,14 +1275,14 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='es5'>ECMAScript 5 Compatibility</a>
+## <a name='es5'>Compatibilidade ECMAScript 5</a>
 
-  - Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
+  - Consulte [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
 
   **[[⬆]](#TOC)**
 
 
-## <a name='testing'>Testing</a>
+## <a name='testing'>Testes</a>
 
   - **Yup.**
 
@@ -1309,25 +1309,25 @@
   **[[⬆]](#TOC)**
 
 
-## <a name='resources'>Resources</a>
+## <a name='resources'>Conteúdo</a>
 
 
-**Read This**
+**Leia isso**
 
   - [Annotated ECMAScript 5.1](http://es5.github.com/)
 
-**Other Styleguides**
+**Outros guias de estilo**
 
   - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
   - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 
-**Other Styles**
+**Outros estilos**
 
   - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
 
-**Books**
+**Livros**
 
   - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -1354,9 +1354,9 @@
 
   **[[⬆]](#TOC)**
 
-## <a name='in-the-wild'>In the Wild</a>
+## <a name='in-the-wild'>Empresas utilizando</a>
 
-  This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.
+  Essa é a lista de organizações que estão utilizando esse guia de estilo. Mande-nos um pull request ou abra um apontamento para adicionarmos voce na lista.
 
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
   - **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
@@ -1371,23 +1371,24 @@
   - **Userify**: [userify/javascript](https://github.com/userify/javascript)
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
 
-## <a name='translation'>Translation</a>
+## <a name='translation'>Traduções</a>
 
   This style guide is also available in other languages:
 
   - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
+  - :br: **Português**: [mitsuruog/javacript-style-guide](https://github.com/armoucar/javacript-style-guide)
 
 ## <a name='guide-guide'>The JavaScript Style Guide Guide</a>
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## <a name='authors'>Contributors</a>
+## <a name='authors'>Contribuidores</a>
 
-  - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
+  - [Ver Contribuidores](https://github.com/airbnb/javascript/graphs/contributors)
 
 
-## <a name='license'>License</a>
+## <a name='license'>Licença</a>
 
 (The MIT License)
 
