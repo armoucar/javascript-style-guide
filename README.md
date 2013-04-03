@@ -438,7 +438,7 @@
 
 ## <a name='hoisting'>Hoisting</a>
 
-  - Variable declarations get hoisted to the top of their scope, their assignment does not.
+  - Declarações de váriaveis durante todo o escopo da função são elevadas ao topo função com valor atribuído `undefined`. Esse comportamento é chamado de `hoisting`.
 
     ```javascript
     // we know this wouldn't work (assuming there
@@ -466,7 +466,7 @@
     }
     ```
 
-  - Anonymous function expressions hoist their variable name, but not the function assignment.
+  - Funções anônimas fazem `hoist` para o nome da sua variável, não para a atribuição da função.
 
     ```javascript
     function example() {
@@ -480,7 +480,7 @@
     }
     ```
 
-  - Named function expressions hoist the variable name, not the function name or the function body.
+  - Funções nomeadas fazem `hoist` para o nome da variável, não para o nome ou corpo da função.
 
     ```javascript
     function example() {
@@ -509,7 +509,7 @@
     }
     ```
 
-  - Function declarations hoist their name and the function body.
+  - Declarações de funções nomeadas fazem `hoist` do nome da função e do seu corpo.
 
     ```javascript
     function example() {
@@ -521,15 +521,15 @@
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
+  - Para mais informações veja [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) por [Ben Cherry](http://www.adequatelygood.com/)
 
     **[[⬆]](#TOC)**
 
 
 
-## <a name='conditionals'>Conditional Expressions & Equality</a>
+## <a name='conditionals'>Expressões Condicionais & Comparações</a>
 
-  - Use `===` and `!==` over `==` and `!=`.
+  - Use `===` e `!==` ao invés de `==` e `!=`.
   - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
 
     + **Objects** evaluate to **true**
