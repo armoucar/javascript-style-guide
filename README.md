@@ -75,24 +75,24 @@
   - Use a sintaxe literal para criação de objetos.
 
     ```javascript
-    // bad
+    // ruim
     var item = new Object();
 
-    // good
+    // bom
     var item = {};
     ```
 
   - Não use [reserved words](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) como chaves.
 
     ```javascript
-    // bad
+    // ruim
     var superman = {
       class: 'superhero',
       default: { clark: 'kent' },
       private: true
     };
 
-    // good
+    // bom
     var superman = {
       klass: 'superhero',
       defaults: { clark: 'kent' },
@@ -106,10 +106,10 @@
   - Use a sintaxe literal para a criação de Arrays.
 
     ```javascript
-    // bad
+    // ruim
     var items = new Array();
 
-    // good
+    // bom
     var items = [];
     ```
 
@@ -119,10 +119,10 @@
     var someStack = [];
 
 
-    // bad
+    // ruim
     someStack[someStack.length] = 'abracadabra';
 
-    // good
+    // bom
     someStack.push('abracadabra');
     ```
 
@@ -133,12 +133,12 @@
         itemsCopy = [],
         i;
 
-    // bad
+    // ruim
     for (i = 0; i < len; i++) {
       itemsCopy[i] = items[i];
     }
 
-    // good
+    // bom
     itemsCopy = Array.prototype.slice.call(items);
     ```
 
@@ -150,16 +150,16 @@
   - Use aspas simples `''` para strings
 
     ```javascript
-    // bad
+    // ruim
     var name = "Bob Parr";
 
-    // good
+    // bom
     var name = 'Bob Parr';
 
-    // bad
+    // ruim
     var fullName = "Bob " + this.lastName;
 
-    // good
+    // bom
     var fullName = 'Bob ' + this.lastName;
     ```
 
@@ -167,10 +167,10 @@
   - Nota: Se muito usado, strings longas com concatenação podem impactar na performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
-    // bad
+    // ruim
     var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
 
-    // bad
+    // ruim
     var errorMessage = 'This is a super long error that \
     was thrown because of Batman. \
     When you stop to think about \
@@ -179,7 +179,7 @@
     fast.';
 
 
-    // good
+    // bom
     var errorMessage = 'This is a super long error that ' +
       'was thrown because of Batman.' +
       'When you stop to think about ' +
@@ -208,7 +208,7 @@
 
     length = messages.length;
 
-    // bad
+    // ruim
     function inbox(messages) {
       items = '<ul>';
 
@@ -219,7 +219,7 @@
       return items + '</ul>';
     }
 
-    // good
+    // bom
     function inbox(messages) {
       items = [];
 
@@ -259,14 +259,14 @@
   - **Nota:** A ECMA-262 define um `bloco` como uma lista de instruções. A declaração de uma função não é uma instrução. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
-    // bad
+    // ruim
     if (currentUser) {
       function test() {
         console.log('Nope.');
       }
     }
 
-    // good
+    // bom
     if (currentUser) {
       var test = function test() {
         console.log('Yup.');
@@ -277,12 +277,12 @@
   - Nunca nomeie um parâmetro como `arguments`. Isso sobrescrevá o objeto `arguments` que é passado para cada função.
 
     ```javascript
-    // bad
+    // ruim
     function nope(name, options, arguments) {
       // ...stuff...
     }
 
-    // good
+    // bom
     function yup(name, options, args) {
       // ...stuff...
     }
@@ -302,10 +302,10 @@
       age: 28
     };
 
-    // bad
+    // ruim
     var isJedi = luke['jedi'];
 
-    // good
+    // bom
     var isJedi = luke.jedi;
     ```
 
@@ -332,22 +332,22 @@
   - Sempre use `var` para declarar variáveis. Não fazer isso irá resultar em variáveis globais. Devemos evitar poluir o namespace global. O Capitão Planeta já nos alertou disso.
 
     ```javascript
-    // bad
+    // ruim
     superPower = new SuperPower();
 
-    // good
+    // bom
     var superPower = new SuperPower();
     ```
 
   - Use somenete uma declaração `var` para múltiplas variáveis e declares cada variável em uma nova linha.
 
     ```javascript
-    // bad
+    // ruim
     var items = getItems();
     var goSportsTeam = true;
     var dragonball = 'z';
 
-    // good
+    // bom
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
@@ -356,18 +356,18 @@
   - Declare as variáveis que voce não vai estipular valor por último. É útil no futuro, quando voce precisar atribuir valor para ela dependendo do valor da variável já declarada.
 
     ```javascript
-    // bad
+    // ruim
     var i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
-    // bad
+    // ruim
     var i, items = getItems(),
         dragonball,
         goSportsTeam = true,
         len;
 
-    // good
+    // bom
     var items = getItems(),
         goSportsTeam = true,
         dragonball,
@@ -378,7 +378,7 @@
   - Defina variáveis no topo do escopo onde ela se encontra. Isso ajuda a evitar problemas com declaração de variáveis e hoisting.
 
     ```javascript
-    // bad
+    // ruim
     function() {
       test();
       console.log('doing stuff..');
@@ -394,7 +394,7 @@
       return name;
     }
 
-    // good
+    // bom
     function() {
       var name = getName();
 
@@ -410,7 +410,7 @@
       return name;
     }
 
-    // bad
+    // ruim
     function() {
       var name = getName();
 
@@ -421,7 +421,7 @@
       return true;
     }
 
-    // good
+    // bom
     function() {
       if (!arguments.length) {
         return false;
@@ -549,22 +549,22 @@
  - Use atalhos.
 
     ```javascript
-    // bad
+    // ruim
     if (name !== '') {
       // ...stuff...
     }
 
-    // good
+    // bom
     if (name) {
       // ...stuff...
     }
 
-    // bad
+    // ruim
     if (collection.length > 0) {
       // ...stuff...
     }
 
-    // good
+    // bom
     if (collection.length) {
       // ...stuff...
     }
@@ -580,22 +580,22 @@
   - Use chaves para todos os blocos com mais de uma linha.
 
     ```javascript
-    // bad
+    // ruim
     if (test)
       return false;
 
-    // good
+    // bom
     if (test) return false;
 
-    // good
+    // bom
     if (test) {
       return false;
     }
 
-    // bad
+    // ruim
     function() { return false; }
 
-    // good
+    // bom
     function() {
       return false;
     }
@@ -609,7 +609,7 @@
   - Use `/** ... */` para comentários com mais de uma linha. Inclua uma descrição e especifique tipos e valores para todos os parametros e retornos.
 
     ```javascript
-    // bad
+    // ruim
     // make() returns a new element
     // based on the passed in tag name
     //
@@ -622,7 +622,7 @@
       return element;
     }
 
-    // good
+    // bom
     /**
      * make() returns a new element
      * based on the passed in tag name
@@ -641,14 +641,14 @@
   - Use `//` para comentários de uma linha. Coloque comentários de uma linha acima da expressão. Deixe uma linha em branco antes de cada comentário.
 
     ```javascript
-    // bad
+    // ruim
     var active = true;  // is current tab
 
-    // good
+    // bom
     // is current tab
     var active = true;
 
-    // bad
+    // ruim
     function getType() {
       console.log('fetching type...');
       // set the default type to 'no type'
@@ -657,7 +657,7 @@
       return type;
     }
 
-    // good
+    // bom
     function getType() {
       console.log('fetching type...');
 
@@ -702,17 +702,17 @@
   - Use tabs com 2 espaços
 
     ```javascript
-    // bad
+    // ruim
     function() {
     ∙∙∙∙var name;
     }
 
-    // bad
+    // ruim
     function() {
     ∙var name;
     }
 
-    // good
+    // bom
     function() {
     ∙∙var name;
     }
@@ -720,23 +720,23 @@
   - Coloque um espaço antes da chave que abre o escopo da função.
 
     ```javascript
-    // bad
+    // ruim
     function test(){
       console.log('test');
     }
 
-    // good
+    // bom
     function test() {
       console.log('test');
     }
 
-    // bad
+    // ruim
     dog.set('attr',{
       age: '1 year',
       breed: 'Bernese Mountain Dog'
     });
 
-    // good
+    // bom
     dog.set('attr', {
       age: '1 year',
       breed: 'Bernese Mountain Dog'
@@ -745,14 +745,14 @@
   - Coloque uma linha em branco no final do arquivo.
 
     ```javascript
-    // bad
+    // ruim
     (function(global) {
       // ...stuff...
     })(this);
     ```
 
     ```javascript
-    // good
+    // bom
     (function(global) {
       // ...stuff...
     })(this);
@@ -762,10 +762,10 @@
   - Use identação quando encadear vários métodos.
 
     ```javascript
-    // bad
+    // ruim
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
 
-    // good
+    // bom
     $('#items')
       .find('.selected')
         .highlight()
@@ -773,13 +773,13 @@
       .find('.open')
         .updateCount();
 
-    // bad
+    // ruim
     var leds = stage.selectAll('.led').data(data).enter().append("svg:svg").class('led', true)
         .attr('width',  (radius + margin) * 2).append("svg:g")
         .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
         .call(tron.led);
 
-    // good
+    // bom
     var leds = stage.selectAll('.led')
         .data(data)
       .enter().append("svg:svg")
@@ -797,17 +797,17 @@
   - **Nope.**
 
     ```javascript
-    // bad
+    // ruim
     var once
       , upon
       , aTime;
 
-    // good
+    // bom
     var once,
         upon,
         aTime;
 
-    // bad
+    // ruim
     var hero = {
         firstName: 'Bob'
       , lastName: 'Parr'
@@ -815,7 +815,7 @@
       , superPower: 'strength'
     };
 
-    // good
+    // bom
     var hero = {
       firstName: 'Bob',
       lastName: 'Parr',
@@ -832,19 +832,19 @@
   - **Yup.**
 
     ```javascript
-    // bad
+    // ruim
     (function() {
       var name = 'Skywalker'
       return name
     })()
 
-    // good
+    // bom
     (function() {
       var name = 'Skywalker';
       return name;
     })();
 
-    // good
+    // bom
     ;(function() {
       var name = 'Skywalker';
       return name;
@@ -862,16 +862,16 @@
     ```javascript
     //  => this.reviewScore = 9;
 
-    // bad
+    // ruim
     var totalScore = this.reviewScore + '';
 
-    // good
+    // bom
     var totalScore = '' + this.reviewScore;
 
-    // bad
+    // ruim
     var totalScore = '' + this.reviewScore + ' total score';
 
-    // good
+    // bom
     var totalScore = this.reviewScore + ' total score';
     ```
 
@@ -881,25 +881,25 @@
     ```javascript
     var inputValue = '4';
 
-    // bad
+    // ruim
     var val = new Number(inputValue);
 
-    // bad
+    // ruim
     var val = +inputValue;
 
-    // bad
+    // ruim
     var val = inputValue >> 0;
 
-    // bad
+    // ruim
     var val = parseInt(inputValue);
 
-    // good
+    // bom
     var val = Number(inputValue);
 
-    // good
+    // bom
     var val = parseInt(inputValue, 10);
 
-    // good
+    // bom
     /**
      * parseInt was the reason my code was slow.
      * Bitshifting the String to coerce it to a
@@ -913,13 +913,13 @@
     ```javascript
     var age = 0;
 
-    // bad
+    // ruim
     var hasAge = new Boolean(age);
 
-    // good
+    // bom
     var hasAge = Boolean(age);
 
-    // good
+    // bom
     var hasAge = !!age;
     ```
 
@@ -931,12 +931,12 @@
   - Não use apenas um caracter, seja descritivo.
 
     ```javascript
-    // bad
+    // ruim
     function q() {
       // ...stuff...
     }
 
-    // good
+    // bom
     function query() {
       // ..stuff..
     }
@@ -945,7 +945,7 @@
   - Use camelCase quando for nomear objetos, funções e instâncias.
 
     ```javascript
-    // bad
+    // ruim
     var OBJEcttsssss = {};
     var this_is_my_object = {};
     var this-is-my-object = {};
@@ -954,7 +954,7 @@
       name: 'Bob Parr'
     });
 
-    // good
+    // bom
     var thisIsMyObject = {};
     function thisIsMyFunction() {};
     var user = new User({
@@ -965,7 +965,7 @@
   - Use PascalCase quando for nomear construtores.
 
     ```javascript
-    // bad
+    // ruim
     function user(options) {
       this.name = options.name;
     }
@@ -974,7 +974,7 @@
       name: 'nope'
     });
 
-    // good
+    // bom
     function User(options) {
       this.name = options.name;
     }
@@ -987,18 +987,18 @@
   - Use um underscore `_` como primeiro caracter no nome de propriedades privadas.
 
     ```javascript
-    // bad
+    // ruim
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
 
-    // good
+    // bom
     this._firstName = 'Panda';
     ```
 
   - Quando for guardar referência para `this` use `_this`.
 
     ```javascript
-    // bad
+    // ruim
     function() {
       var self = this;
       return function() {
@@ -1006,7 +1006,7 @@
       };
     }
 
-    // bad
+    // ruim
     function() {
       var that = this;
       return function() {
@@ -1014,7 +1014,7 @@
       };
     }
 
-    // good
+    // bom
     function() {
       var _this = this;
       return function() {
@@ -1026,12 +1026,12 @@
   - Nomeie suas funções. Ajuda bastante quando for analisar pilhas de erro.
 
     ```javascript
-    // bad
+    // ruim
     var log = function(msg) {
       console.log(msg);
     };
 
-    // good
+    // bom
     var log = function log(msg) {
       console.log(msg);
     };
@@ -1046,28 +1046,28 @@
   - Se voce vai criar métodos acessores utilize getVal() e setVal('hello')
 
     ```javascript
-    // bad
+    // ruim
     dragon.age();
 
-    // good
+    // bom
     dragon.getAge();
 
-    // bad
+    // ruim
     dragon.age(25);
 
-    // good
+    // bom
     dragon.setAge(25);
     ```
 
   - Se a propriedade é um boolean, use isVal() ou hasVal()
 
     ```javascript
-    // bad
+    // ruim
     if (!dragon.age()) {
       return false;
     }
 
-    // good
+    // bom
     if (!dragon.hasAge()) {
       return false;
     }
@@ -1103,7 +1103,7 @@
       console.log('new jedi');
     }
 
-    // bad
+    // ruim
     Jedi.prototype = {
       fight: function fight() {
         console.log('fighting');
@@ -1114,7 +1114,7 @@
       }
     };
 
-    // good
+    // bom
     Jedi.prototype.fight = function fight() {
       console.log('fighting');
     };
@@ -1127,7 +1127,7 @@
   - Métodos podem retornar `this` para encadear novas chamadas.
 
     ```javascript
-    // bad
+    // ruim
     Jedi.prototype.jump = function() {
       this.jumping = true;
       return true;
@@ -1141,7 +1141,7 @@
     luke.jump(); // => true
     luke.setHeight(20) // => undefined
 
-    // good
+    // bom
     Jedi.prototype.jump = function() {
       this.jumping = true;
       return this;
@@ -1215,17 +1215,17 @@
   - Nomeie objetos jQuery com o prefixo `$`.
 
     ```javascript
-    // bad
+    // ruim
     var sidebar = $('.sidebar');
 
-    // good
+    // bom
     var $sidebar = $('.sidebar');
     ```
 
   - Guarde as consultas jQuery para reuso.
 
     ```javascript
-    // bad
+    // ruim
     function setSidebar() {
       $('.sidebar').hide();
 
@@ -1236,7 +1236,7 @@
       });
     }
 
-    // good
+    // bom
     function setSidebar() {
       var $sidebar = $('.sidebar');
       $sidebar.hide();
@@ -1253,22 +1253,22 @@
   - Use `find` em objetos jQuery que estão armazenados em variáveis.
 
     ```javascript
-    // bad
+    // ruim
     $('.sidebar', 'ul').hide();
 
-    // bad
+    // ruim
     $('.sidebar').find('ul').hide();
 
-    // good
+    // bom
     $('.sidebar ul').hide();
 
-    // good
+    // bom
     $('.sidebar > ul').hide();
 
-    // good (slower)
+    // bom (slower)
     $sidebar.find('ul');
 
-    // good (faster)
+    // bom (faster)
     $($sidebar[0]).find('ul');
     ```
 
@@ -1377,7 +1377,7 @@
 
   - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
-  - :br: **Português**: [mitsuruog/javacript-style-guide](https://github.com/armoucar/javacript-style-guide)
+  - :br: **Português**: [armoucar/javacript-style-guide](https://github.com/armoucar/javacript-style-guide)
 
 ## <a name='guide-guide'>The JavaScript Style Guide Guide</a>
 
