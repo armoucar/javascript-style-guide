@@ -1377,6 +1377,7 @@
   - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
   - :br: **Português**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
+  - :es: **Espanhol**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
 
 ## <a name='guide-guide'>The JavaScript Style Guide Guide</a>
 
