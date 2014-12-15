@@ -25,15 +25,17 @@
   1. [Convenções de nomenclatura](#naming-conventions)
   1. [Métodos Acessores](#accessors)
   1. [Construtores](#constructors)
+  1. [Eventos](#events)
   1. [Módulos](#modules)
   1. [jQuery](#jquery)
-  1. [Compatibilidade EcmaScript5 ](#es5)
+  1. [Compatibilidade ECMAScript5 ](#es5)
   1. [Testes](#testing)
   1. [Performance](#performance)
   1. [Conteúdo](#resources)
   1. [Empresas utilizando](#in-the-wild)
   1. [Traduções](#translation)
   1. [The JavaScript Style Guide Guide](#guide-guide)
+  1. [Chat With Us About Javascript](#chat-with-us-about-javascript)
   1. [Contribuidores](#contributors)
   1. [Licença](#license)
 
@@ -1555,12 +1557,12 @@
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## Converse com nós sobre JavaScript
+## <a name='chat-with-us-about-javascript'>Converse conosco sobre JavaScript</a>
 
   - Estamos em [gitter](https://gitter.im/airbnb/javascript).
 
 
-## <a name='authors'>Contribuidores</a>
+## <a name='contributors'>Contribuidores</a>
 
   - [Ver Contribuidores](https://github.com/airbnb/javascript/graphs/contributors)
 
