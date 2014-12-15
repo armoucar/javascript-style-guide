@@ -41,7 +41,7 @@
 
 ## <a name='types'>Tipos</a>
 
-  - **Primitivos**: Quando voce acessa um tipo primitivo voce lida diretamente com seu valor.
+  - **Primitivos**: Quando você acessa um tipo primitivo você lida diretamente com seu valor.
 
     + `string`
     + `number`
@@ -57,7 +57,7 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complexos**: Quando voce acessa um tipo complexo voce lida com a referência para seu valor.
+  - **Complexos**: Quando você acessa um tipo complexo você lida com a referência para seu valor.
 
     + `object`
     + `array`
@@ -136,7 +136,7 @@
     var items = [];
     ```
 
-  - Se voce não sabe o tamanho do array use Array#push.
+  - Se você não sabe o tamanho do array use Array#push.
 
     ```javascript
     var someStack = [];
@@ -281,7 +281,7 @@
     })();
     ```
 
-  - Nunca declare uma função em um escopo que não seja de uma função (if, while, etc). Ao invés, atribua a função para uma variavel. Os Browsers irão deixar voce fazer isso, mas a interpretação disso não é legal. Fazendo isso voce pode ter más notícias a qualquer momento.
+  - Nunca declare uma função em um escopo que não seja de uma função (if, while, etc). Ao invés, atribua a função para uma variavel. Os Browsers irão deixar você fazer isso, mas a interpretação disso não é legal. Fazendo isso você pode ter más notícias a qualquer momento.
   - **Nota:** A ECMA-262 define um `bloco` como uma lista de instruções. A declaração de uma função não é uma instrução. [Leia em ECMA-262's](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
@@ -387,7 +387,7 @@
     ```
 
 
-  - Declare as variáveis que voce não vai estipular valor por último. É útil no futuro, quando você precisar atribuir valor para ela dependendo do valor da variável já declarada.
+  - Declare as variáveis que você não vai estipular valor por último. É útil no futuro, quando você precisar atribuir valor para ela dependendo do valor da variável já declarada.
 
     ```javascript
     // ruim
@@ -700,7 +700,7 @@
     }
     ```
 
-  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se voce está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado.
+  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se você está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado.
 
   - Use `// FIXME:` to annotate problems
 
@@ -980,7 +980,7 @@
     var val = parseInt(inputValue, 10);
     ```
 
-  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
+  - Se por alguma razão você está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que você está fazendo isso.
 
     ```javascript
     // good
@@ -1166,7 +1166,7 @@
     }
     ```
 
-  - Tudo bem se voce criar os métodos get() e set(), mas seja consistente.
+  - Tudo bem se você criar os métodos get() e set(), mas seja consistente.
 
     ```javascript
     function Jedi(options) {
@@ -1494,7 +1494,7 @@
 
 ## <a name='in-the-wild'>Empresas utilizando</a>
 
-  Essa é a lista de organizações que estão utilizando esse guia de estilo. Mande-nos um pull request ou abra um apontamento para adicionarmos voce na lista.
+  Essa é a lista de organizações que estão utilizando esse guia de estilo. Mande-nos um pull request ou abra um apontamento para adicionarmos você na lista.
 
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
