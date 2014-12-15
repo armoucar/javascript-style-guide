@@ -319,7 +319,7 @@
 
 
 
-## <a name='properties'>Properties</a>
+## <a name='properties'>Propriedades</a>
 
   - Use ponto `.` para acessar propriedades.
 
