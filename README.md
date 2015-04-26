@@ -1,9 +1,11 @@
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # Airbnb JavaScript Style Guide() {
 
 *Uma boa abordagem para JavaScript*
 
 
-## <a name='TOC'>Índice</a>
+## <a name='#table-of-contents'>Índice</a>
 
   1. [Tipos](#types)
   1. [Objetos](#objects)
@@ -13,25 +15,27 @@
   1. [Propriedades](#properties)
   1. [Variáveis](#variables)
   1. [Hoisting](#hoisting)
-  1. [Expressões Condicionais & Comparações](#conditionals)
+  1. [Expressões Condicionais & Comparações](#comparison-operators--equality)
   1. [Blocos](#blocks)
   1. [Comentários](#comments)
   1. [Espaços em branco](#whitespace)
-  1. [Leading Commas](#leading-commas)
-  1. [Ponto e vírgula](#semicolons)
-  1. [Casting & Coerção de Tipos](#type-coercion)
+  1. [Vírgulas](#commas)
+  1. [Ponto e vírgulas](#semicolons)
+  1. [Casting & Coerção de Tipos](#type-casting--coercion)
   1. [Convenções de nomenclatura](#naming-conventions)
   1. [Métodos Acessores](#accessors)
   1. [Construtores](#constructors)
+  1. [Eventos](#events)
   1. [Módulos](#modules)
   1. [jQuery](#jquery)
-  1. [Compatibilidade EcmaScript5 ](#es5)
+  1. [Compatibilidade ECMAScript 5](#ecmascript-5-compatibility)
   1. [Testes](#testing)
   1. [Performance](#performance)
-  1. [Conteúdo](#resources)
+  1. [Recursos](#resources)
   1. [Empresas utilizando](#in-the-wild)
   1. [Traduções](#translation)
-  1. [The JavaScript Style Guide Guide](#guide-guide)
+  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
+  1. [Converse conosco sobre Javascript](#chat-with-us-about-javascript)
   1. [Contribuidores](#contributors)
   1. [Licença](#license)
 
