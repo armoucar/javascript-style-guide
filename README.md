@@ -135,7 +135,7 @@
     var items = [];
     ```
 
-  - Se voce não sabe o tamanho do array use Array#push.
+  - Use Array#push ao inves de atribuir um item diretamente ao array.
 
     ```javascript
     var someStack = [];
@@ -151,9 +151,9 @@
   - Quando precisar copiar um Array utilize Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
-    var len = items.length,
-        itemsCopy = [],
-        i;
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
 
     // ruim
     for (i = 0; i < len; i++) {
@@ -161,10 +161,19 @@
     }
 
     // bom
-    itemsCopy = Array.prototype.slice.call(items);
+    itemsCopy = items.slice();
     ```
 
-    **[[⬆]](#TOC)**
+  - Para converter um objeto similar a um array para array, utilize Array#slice.
+
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+    ```
+
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='strings'>Strings</a>
