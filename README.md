@@ -626,7 +626,7 @@
     }
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='comments'>Comentários</a>
