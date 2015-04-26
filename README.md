@@ -693,33 +693,33 @@
     }
     ```
 
-  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se voce está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado.
+  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se voce está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
 
-  - Use `// FIXME:` to annotate problems
+  - Use `// FIXME:` para marcar problemas
 
     ```javascript
     function Calculator() {
 
-      // FIXME: shouldn't use a global here
+      // FIXME: não utilizar global aqui
       total = 0;
 
       return this;
     }
     ```
 
-  - Use `// TODO:` to annotate solutions to problems
+  - Use `// TODO:` para marcar soluções para um problema
 
     ```javascript
     function Calculator() {
 
-      // TODO: total should be configurable by an options param
+      // TODO: total deve ser configurado por um parâmetro das opções
       this.total = 0;
 
       return this;
     }
   ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='whitespace'>Espaços em branco</a>
