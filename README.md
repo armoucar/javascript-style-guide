@@ -41,7 +41,7 @@
 
 ## <a name='types'>Tipos</a>
 
-  - **Primitivos**: Quando voce acessa um tipo primitivo voce lida diretamente com seu valor.
+  - **Primitivos**: Quando você acessa um tipo primitivo você lida diretamente com seu valor.
 
     + `string`
     + `number`
@@ -50,29 +50,29 @@
     + `undefined`
 
     ```javascript
-    var foo = 1,
-        bar = foo;
+    var foo = 1;
+    var bar = foo;
 
     bar = 9;
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complexos**: Quando voce acessa um tipo complexo voce lida com a referência para seu valor.
+  - **Complexos**: Quando você acessa um tipo complexo você lida com a referência para seu valor.
 
     + `object`
     + `array`
     + `function`
 
     ```javascript
-    var foo = [1, 2],
-        bar = foo;
+    var foo = [1, 2];
+    var bar = foo;
 
     bar[0] = 9;
 
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 ## <a name='objects'>Objetos</a>
 
