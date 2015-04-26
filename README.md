@@ -552,7 +552,7 @@
 
 
 
-## <a name='conditionals'>Expressões Condicionais & Comparações</a>
+## <a name='comparison-operators--equality'>Expressões Condicionais & Comparações</a>
 
   - Use `===` e `!==` ao invés de `==` e `!=`.
   - Expressões condicionais são interpretadas usando coerção de tipos e seguem as seguintes regras:
@@ -561,8 +561,8 @@
     + **Undefined** equivale a **false**
     + **Null** equivale a **false**
     + **Booleans** equivalem a **o valor do boolean**
-    + **Numbers** equivalem a **false** se **+0, -0, or NaN**, senão **true**
-    + **Strings** equivalem a **false** se são vazias `''`, senão **true**
+    + **Numbers** equivalem a **false** se **+0, -0, or NaN**, se não **true**
+    + **Strings** equivalem a **false** se são vazias `''`, se não **true**
 
     ```javascript
     if ([0]) {
@@ -597,7 +597,7 @@
 
   - Para mais informações veja [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) por Angus Croll
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='blocks'>Blocos</a>
