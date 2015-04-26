@@ -86,24 +86,42 @@
     var item = {};
     ```
 
-  - Não use [palavras reservadas](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) como chaves.
+  - Não use [palavras reservadas](http://es5.github.io/#x7.6.1) como chaves. Não irão funcionar no IE8. [Leia mais](https://github.com/airbnb/javascript/issues/61).
 
     ```javascript
     // ruim
     var superman = {
-      class: 'superhero',
       default: { clark: 'kent' },
       private: true
     };
 
     // bom
     var superman = {
-      klass: 'superhero',
       defaults: { clark: 'kent' },
       hidden: true
     };
     ```
-    **[[⬆]](#TOC)**
+
+  - Use sinônimos legíveis no lugar de palavras reservadas.
+
+    ```javascript
+    // ruim
+    var superman = {
+      class: 'alien'
+    };
+
+    // ruim
+    var superman = {
+      klass: 'alien'
+    };
+
+    // bom
+    var superman = {
+      type: 'alien'
+    };
+    ```
+
+**[⬆ voltar ao topo](#table-of-contents)**
 
 ## <a name='arrays'>Arrays</a>
 
