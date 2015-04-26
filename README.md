@@ -350,7 +350,7 @@
     var isJedi = getProp('jedi');
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='variables'>Variáveis</a>
