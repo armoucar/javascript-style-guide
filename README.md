@@ -1463,7 +1463,7 @@
 
     ```javascript
     // ruim
-    $('.sidebar', 'ul').hide();
+    $('ul', '.sidebar').hide();
 
     // ruim
     $('.sidebar').find('ul').hide();
@@ -1474,14 +1474,11 @@
     // bom
     $('.sidebar > ul').hide();
 
-    // bom (slower)
-    $sidebar.find('ul');
-
-    // bom (faster)
-    $($sidebar[0]).find('ul');
+    // bom
+    $sidebar.find('ul').hide();
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='es5'>Compatibilidade ECMAScript 5</a>
