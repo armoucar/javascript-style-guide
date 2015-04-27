@@ -1107,21 +1107,20 @@
     // ruim
     var OBJEcttsssss = {};
     var this_is_my_object = {};
-    var this-is-my-object = {};
-    function c() {};
+    function c() {}
     var u = new user({
       name: 'Bob Parr'
     });
 
     // bom
     var thisIsMyObject = {};
-    function thisIsMyFunction() {};
+    function thisIsMyFunction() {}
     var user = new User({
       name: 'Bob Parr'
     });
     ```
 
-  - Use PascalCase quando for nomear construtores.
+  - Use PascalCase quando for nomear construtores ou classes.
 
     ```javascript
     // ruim
@@ -1143,7 +1142,7 @@
     });
     ```
 
-  - Use um underscore `_` como primeiro caracter no nome de propriedades privadas.
+  - Use um underscore `_` como primeiro caracter em propriedades privadas.
 
     ```javascript
     // ruim
@@ -1196,7 +1195,28 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+  - **Nota:** IE8 ou inferior mostra alguns problemas com funções nomeadas. Veja [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) para mais informações.
+
+  - Se seu arquivos exporta apenas uma classes, o nome do arquivo deve conter exatamento o nome da classe.
+    ```javascript
+    // conteúdo do arquivo
+    class CheckBox {
+      // ...
+    }
+    module.exports = CheckBox;
+
+    // em outro arquivo
+    // ruim
+    var CheckBox = require('./checkBox');
+
+    // ruim
+    var CheckBox = require('./check_box');
+
+    // bom
+    var CheckBox = require('./CheckBox');
+    ```
+
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='accessors'>Métodos Acessores</a>
