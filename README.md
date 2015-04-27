@@ -1645,7 +1645,7 @@
 
 ## <a name='translation'>Traduções</a>
 
-  This style guide is also available in other languages:
+  Este style guide está disponível em outros idiomas:
 
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
@@ -1666,7 +1666,7 @@
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## <a name='authors'>Contribuidores</a>
+## <a name='contributors'>Contribuidores</a>
 
   - [Ver Contribuidores](https://github.com/airbnb/javascript/graphs/contributors)
 
