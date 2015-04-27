@@ -1358,10 +1358,40 @@
 **[⬆ voltar ao topo](#table-of-contents)**
 
 
+## <a name='events'>Eventos</a>
+
+  - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+
+    ```js
+    // ruim
+    $(this).trigger('listingUpdated', listing.id);
+
+    ...
+
+    $(this).on('listingUpdated', function(e, listingId) {
+      // do something with listingId
+    });
+    ```
+
+    prefira:
+
+    ```js
+    // bom
+    $(this).trigger('listingUpdated', { listingId : listing.id });
+
+    ...
+
+    $(this).on('listingUpdated', function(e, data) {
+      // do something with data.listingId
+    });
+    ```
+
+**[⬆ voltar ao topo](#table-of-contents)**
+
 ## <a name='modules'>Módulos</a>
 
-  - Um módulo deve começar com `!`. Isso garante que não haverá erros em produção caso os scripts sejam concatenados e um módulo não termine com ponto e vírgula.
-  - Nomeie o arquivo em formato camelCase, coloque em uma pasta com o mesmo nome e procure  o nome da função que é exportada.
+  - Um módulo deve começar com `!`. Isso garante que não haverá erros em produção caso os scripts sejam concatenados e um módulo não termine com ponto e vírgula. [Explicação](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
+  - Nomeie o arquivo em formato camelCase, coloque em uma pasta com o mesmo nome e procure o nome da função que é exportada.
   - Adicione um método noConflict() que exporta o módulo antigo e retorna o módulo que foi criado com o mesmo nome.
   - Sempre declare `'use strict';` no topo do módulo.
 
@@ -1386,7 +1416,7 @@
     }(this);
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='jquery'>jQuery</a>
