@@ -1481,11 +1481,11 @@
 **[⬆ voltar ao topo](#table-of-contents)**
 
 
-## <a name='es5'>Compatibilidade ECMAScript 5</a>
+## <a name='ecmascript-5-compatibility'>Compatibilidade ECMAScript 5</a>
 
   - Consulte [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
 
-  **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='testing'>Testes</a>
