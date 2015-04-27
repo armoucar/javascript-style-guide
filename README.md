@@ -979,26 +979,28 @@
   - **Yup.**
 
     ```javascript
-    // ruim
+    // bad
     (function() {
       var name = 'Skywalker'
       return name
     })()
 
-    // bom
+    // good
     (function() {
       var name = 'Skywalker';
       return name;
     })();
 
-    // bom
+    // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
     ;(function() {
       var name = 'Skywalker';
       return name;
     })();
     ```
 
-    **[[⬆]](#TOC)**
+    [Leia mais](http://stackoverflow.com/a/7365214/1712802).
+
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='type-coercion'>Casting & Coerção de tipos</a>
