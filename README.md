@@ -1666,6 +1666,10 @@
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
+## Chat With Us About JavaScript
+
+  - Find us on [gitter](https://gitter.im/airbnb/javascript).
+
 ## <a name='contributors'>Contribuidores</a>
 
   - [Ver Contribuidores](https://github.com/airbnb/javascript/graphs/contributors)
