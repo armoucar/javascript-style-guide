@@ -948,7 +948,7 @@
   > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
 
     ```javascript
-    // bad
+    // ruim
     var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn',
@@ -959,7 +959,7 @@
       'Superman',
     ];
 
-    // good
+    // bom
     var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn'
@@ -979,19 +979,19 @@
   - **Yup.**
 
     ```javascript
-    // bad
+    // ruim
     (function() {
       var name = 'Skywalker'
       return name
     })()
 
-    // good
+    // bom
     (function() {
       var name = 'Skywalker';
       return name;
     })();
 
-    // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    // bom (guards against the function becoming an argument when two files with IIFEs are concatenated)
     ;(function() {
       var name = 'Skywalker';
       return name;
@@ -1029,28 +1029,28 @@
     ```javascript
     var inputValue = '4';
 
-    // bad
+    // ruim
     var val = new Number(inputValue);
 
-    // bad
+    // ruim
     var val = +inputValue;
 
-    // bad
+    // ruim
     var val = inputValue >> 0;
 
-    // bad
+    // ruim
     var val = parseInt(inputValue);
 
-    // good
+    // bom
     var val = Number(inputValue);
 
-    // good
+    // bom
     var val = parseInt(inputValue, 10);
     ```
   - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
 
     ```javascript
-    // good
+    // bom
     /**
      * parseInt é a causa do meu código estar lendo.
      * Bitshifting a String para força-lo como um
