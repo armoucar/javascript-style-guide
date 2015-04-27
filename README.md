@@ -305,12 +305,12 @@
     ```javascript
     // ruim
     function nope(name, options, arguments) {
-      // ...stuff...
+      // ...outras implementações...
     }
 
     // bom
     function yup(name, options, args) {
-      // ...stuff...
+      // ...outras implementações...
     }
     ```
 
@@ -407,9 +407,9 @@
     // ruim
     function() {
       test();
-      console.log('doing stuff..');
+      console.log('fazendo qualquer coisa..');
 
-      //..other stuff..
+      //..outras implementações..
 
       var name = getName();
 
@@ -425,9 +425,9 @@
       var name = getName();
 
       test();
-      console.log('doing stuff..');
+      console.log('fazendo alguma coisa..');
 
-      //..other stuff..
+      //...outras implmementações...
 
       if (name === 'test') {
         return false;
@@ -576,22 +576,22 @@
     ```javascript
     // ruim
     if (name !== '') {
-      // ...stuff...
+      // ...outras implementações...
     }
 
     // bom
     if (name) {
-      // ...stuff...
+      // ...outras implementações...
     }
 
     // ruim
     if (collection.length > 0) {
-      // ...stuff...
+      // ...outras implementações...
     }
 
     // bom
     if (collection.length) {
-      // ...stuff...
+      // ...outras implementações...
     }
     ```
 
@@ -642,7 +642,7 @@
     // @return <Element> element
     function make(tag) {
 
-      // ...stuff...
+      // ...outra implementação...
 
       return element;
     }
@@ -657,7 +657,7 @@
      */
     function make(tag) {
 
-      // ...stuff...
+      // ...outras implementações...
 
       return element;
     }
@@ -808,14 +808,14 @@
    ```javascript
     // ruim
     (function(global) {
-      // ...stuff...
+      // ...outras implementações...
     })(this);
     ```
 
     ```javascript
     // ruim
     (function(global) {
-      // ...stuff...
+      // ...outras implementações...
     })(this);↵
     ↵
     ```
@@ -823,7 +823,7 @@
     ```javascript
     // bom
     (function(global) {
-      // ...stuff...
+      // ...outras implementações...
     })(this);↵
     ```
 
@@ -1092,12 +1092,12 @@
     ```javascript
     // ruim
     function q() {
-      // ...stuff...
+      // ...outras implementações...
     }
 
     // bom
     function query() {
-      // ..stuff..
+      // ...outras implementações...
     }
     ```
 
@@ -1438,7 +1438,7 @@
     function setSidebar() {
       $('.sidebar').hide();
 
-      // ...stuff...
+      // ...outras implementações...
 
       $('.sidebar').css({
         'background-color': 'pink'
@@ -1450,7 +1450,7 @@
       var $sidebar = $('.sidebar');
       $sidebar.hide();
 
-      // ...stuff...
+      // ...outras implementações...
 
       $sidebar.css({
         'background-color': 'pink'
