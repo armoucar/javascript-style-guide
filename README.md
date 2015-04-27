@@ -1003,7 +1003,7 @@
 **[⬆ voltar ao topo](#table-of-contents)**
 
 
-## <a name='type-coercion'>Casting & Coerção de tipos</a>
+## <a name='type-casting--coercion'>Casting & Coerção de tipos</a>
 
   - Faça coerção de tipos no inicio da expressão.
   - Strings:
@@ -1025,36 +1025,46 @@
     ```
 
   - Use `parseInt` para Numbers e sempre informe a base de conversão.
-  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
-
+ 
     ```javascript
     var inputValue = '4';
 
-    // ruim
+    // bad
     var val = new Number(inputValue);
 
-    // ruim
+    // bad
     var val = +inputValue;
 
-    // ruim
+    // bad
     var val = inputValue >> 0;
 
-    // ruim
+    // bad
     var val = parseInt(inputValue);
 
-    // bom
+    // good
     var val = Number(inputValue);
 
-    // bom
+    // good
     var val = parseInt(inputValue, 10);
+    ```
+  - Se por alguma razão voce está fazendo algo muito underground e o `parseInt` é o gargalo, se usar deslocamento de bits (`Bitshift`) por [questões de performance](http://jsperf.com/coercion-vs-casting/3), deixe um comentário explicando por que voce está fazendo isso.
 
-    // bom
+    ```javascript
+    // good
     /**
-     * parseInt era a razão do código ser lento.
-     * Deslocando bits a String faz coerção para Number
-     * muito mais rápido.
+     * parseInt é a causa do meu código estar lendo.
+     * Bitshifting a String para força-lo como um
+     * Number faz isso muito mais rápido.
      */
     var val = inputValue >> 0;
+    ```
+
+  - **Nota:** Cuidado com operações de bitshift. Numbers são representados por [valores 64-bit](http://es5.github.io/#x4.3.19), mas operações Bitshift sempre retornarão valores inteiros de 32-bit ([fonte](http://es5.github.io/#x11.7)). Bitshift pode levar a um comportamento inesperado para valores inteiros maiores que 32 bits. [Discussão](https://github.com/airbnb/javascript/issues/109). O mairo valor Integer signed 32-bit é 2.147.483.647:
+
+    ```javascript
+    2147483647 >> 0 //=> 2147483647
+    2147483648 >> 0 //=> -2147483648
+    2147483649 >> 0 //=> -2147483647
     ```
 
   - Booleans:
@@ -1072,7 +1082,7 @@
     var hasAge = !!age;
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='naming-conventions'>Convenções de nomenclatura</a>
