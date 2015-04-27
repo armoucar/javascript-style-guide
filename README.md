@@ -693,7 +693,7 @@
     }
     ```
 
-  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se você está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - Use prefixos `FIXME` or `TODO` nos seus comentários. Isso vai ajudar outros desenvolvedores a entenderem rapidamente se você está indicando um código que precisa ser revisado ou está sugerindo uma solução para o problema e como deve ser implementado. Estes são comentários diferentes dos convencionais, porque eles são acionáveis/acionados. As ações são FIXME, utilizado para comentários de apresentação ou TODO necessário a implementação.
 
   - Use `// FIXME:` para marcar problemas
 
