@@ -1275,7 +1275,7 @@
 
 ## <a name='constructors'>Construtores</a>
 
-  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto. TODO: Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto.Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
     ```javascript
     function Jedi() {
@@ -1355,7 +1355,7 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='modules'>Módulos</a>
