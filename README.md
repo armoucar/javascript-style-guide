@@ -742,6 +742,7 @@
     ∙∙var name;
     }
     ```
+
   - Coloque um espaço antes da chave que abre o escopo da função.
 
     ```javascript
@@ -767,9 +768,44 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
+
+  - Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
+
+    ```javascript
+    // ruim
+    if(isJedi) {
+      fight ();
+    }
+
+    // bom
+    if (isJedi) {
+      fight();
+    }
+
+    // ruim
+    function fight () {
+      console.log ('Swooosh!');
+    }
+
+    // bom
+    function fight() {
+      console.log('Swooosh!');
+    }
+    ```
+
+  - Colcar espaço entre operadores.
+
+    ```javascript
+    // ruim
+    var x=y+5;
+
+    // bom
+    var x = y + 5;
+    ```
+
   - Coloque uma linha em branco no final do arquivo.
 
-    ```javascript
+   ```javascript
     // ruim
     (function(global) {
       // ...stuff...
@@ -777,60 +813,118 @@
     ```
 
     ```javascript
+    // ruim
+    (function(global) {
+      // ...stuff...
+    })(this);↵
+    ↵
+    ```
+
+    ```javascript
     // bom
     (function(global) {
       // ...stuff...
-    })(this);
-
+    })(this);↵
     ```
 
-  - Use identação quando encadear vários métodos.
+  - Use identação quando encadear vários métodos. Use um ponto à esquerda, o que
+     enfatiza que a linha é uma chamada de método, não uma nova declaração.
+
+    ```javascript
+      // ruim
+      $('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+      // ruim
+      $('#items').
+        find('.selected').
+          highlight().
+          end().
+        find('.open').
+          updateCount();
+
+      // bom
+      $('#items')
+        .find('.selected')
+          .highlight()
+          .end()
+        .find('.open')
+          .updateCount();
+
+      // ruim
+      var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+          .attr('width', (radius + margin) * 2).append('svg:g')
+          .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+          .call(tron.led);
+
+      // bom
+      var leds = stage.selectAll('.led')
+          .data(data)
+        .enter().append('svg:svg')
+          .classed('led', true)
+          .attr('width', (radius + margin) * 2)
+        .append('svg:g')
+          .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+          .call(tron.led);
+      ```
+
+  - Deixar uma linha em branco depois de blocos e antes da próxima declaração
 
     ```javascript
     // ruim
-    $('#items').find('.selected').highlight().end().find('.open').updateCount();
+    if (foo) {
+      return bar;
+    }
+    return baz;
 
     // bom
-    $('#items')
-      .find('.selected')
-        .highlight()
-        .end()
-      .find('.open')
-        .updateCount();
+    if (foo) {
+      return bar;
+    }
+
+    return baz;
 
     // ruim
-    var leds = stage.selectAll('.led').data(data).enter().append("svg:svg").class('led', true)
-        .attr('width',  (radius + margin) * 2).append("svg:g")
-        .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
-        .call(tron.led);
+    var obj = {
+      foo: function() {
+      },
+      bar: function() {
+      }
+    };
+    return obj;
 
     // bom
-    var leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append("svg:svg")
-        .class('led', true)
-        .attr('width',  (radius + margin) * 2)
-      .append("svg:g")
-        .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
-        .call(tron.led);
+    var obj = {
+      foo: function() {
+      },
+
+      bar: function() {
+      }
+    };
+
+    return obj;
     ```
 
-    **[[⬆]](#TOC)**
+**[⬆ voltar ao topo](#table-of-contents)**
 
-## <a name='leading-commas'>Leading Commas</a>
 
-  - **Nope.**
+## <a name='commas'>Vírgulas</a>
+
+  - Leading commas: **Nope.**
 
     ```javascript
     // ruim
-    var once
+    var story = [
+        once
       , upon
-      , aTime;
+      , aTime
+    ];
 
     // bom
-    var once,
-        upon,
-        aTime;
+    var story = [
+      once,
+      upon,
+      aTime
+    ];
 
     // ruim
     var hero = {
@@ -849,7 +943,35 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+
+  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
+
+    ```javascript
+    // bad
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn',
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman',
+    ];
+
+    // good
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn'
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman'
+    ];
+    ```
+
+**[⬆ voltar ao topo](#table-of-contents)**
 
 
 ## <a name='semicolons'>Ponto e vírgula</a>
