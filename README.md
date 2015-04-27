@@ -5,7 +5,7 @@
 *Uma boa abordagem para JavaScript*
 
 
-## <a name='#table-of-contents'>Índice</a>
+## <a name='table-of-contents'>Índice</a>
 
   1. [Tipos](#types)
   1. [Objetos](#objects)
