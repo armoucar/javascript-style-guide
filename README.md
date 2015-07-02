@@ -365,7 +365,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use somenete uma declaração `var` para múltiplas variáveis e declares cada variável em uma nova linha.
+  - Use somente uma declaração `var` para múltiplas variáveis e declares cada variável em uma nova linha.
 
     ```javascript
     // ruim
