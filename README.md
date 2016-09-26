@@ -318,7 +318,7 @@
 
 
 
-## <a name='properties'>Properties</a>
+## <a name='properties'>Propriedades</a>
 
   - Use ponto `.` para acessar propriedades.
 
@@ -1275,7 +1275,7 @@
 
 ## <a name='constructors'>Construtores</a>
 
-  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto.Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto. Substituindo o protótipo faz herança impossível: redefinindo o protótipo poderá substituir a base!
 
     ```javascript
     function Jedi() {
