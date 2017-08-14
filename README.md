@@ -769,7 +769,7 @@
     });
     ```
 
-  - Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
+  - Coloque 1 espaço antes do parênteses de abertura de comandos de controle (`if`, `while` etc.). Não coloque espaços antes da lista de argumentos em chamadas e declarações de funções.
 
     ```javascript
     // ruim
@@ -793,7 +793,7 @@
     }
     ```
 
-  - Colcar espaço entre operadores.
+  - Colocar espaço entre operadores.
 
     ```javascript
     // ruim
