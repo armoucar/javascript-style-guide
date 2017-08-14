@@ -805,26 +805,21 @@
 
   - Coloque uma linha em branco no final do arquivo.
 
-   ```javascript
+    ```javascript
     // ruim
     (function(global) {
       // ...outras implementações...
     })(this);
-    ```
 
-    ```javascript
     // ruim
     (function(global) {
       // ...outras implementações...
-    })(this);↵
-    ↵
-    ```
+    })(this);
 
-    ```javascript
     // bom
     (function(global) {
       // ...outras implementações...
-    })(this);↵
+    })(this);
     ```
 
   - Use identação quando encadear vários métodos. Use um ponto à esquerda, o que
