@@ -1020,7 +1020,7 @@
     ```
 
   - Use `parseInt` para Numbers e sempre informe a base de conversão.
- 
+  
     ```javascript
     var inputValue = '4';
 
@@ -1270,7 +1270,7 @@
 
 ## <a name='constructors'>Construtores</a>
 
-  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto.Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+  - Atribua métodos ao objeto `prototype` ao invés de sobrescrever o prototype com um novo objeto. Sobrescrever o prototype torna a herança impossível: resetando o prototype, você irá sobrescrever a base!
 
     ```javascript
     function Jedi() {
@@ -1698,4 +1698,3 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 **[⬆ voltar ao topo](#table-of-contents)**
 
 # };
-
