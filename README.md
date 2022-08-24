@@ -1355,7 +1355,7 @@
 
 ## <a name='events'>Eventos</a>
 
-  - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - Quando se acopla conjuntos de dados aos eventos (mesmo que sejam eventos na DOM ou alguma outra coisa mais proprietária como eventos Backbone), passe uma hash ao invés de valores brutos. Isso permite que o próximo contribuidor adicione mais dados para o atual conjunto de dados do evento sem precisar procurar e atualizar cada event handler para esse evento. Por exemplo, ao invés de:
 
     ```js
     // ruim
@@ -1364,7 +1364,7 @@
     ...
 
     $(this).on('listingUpdated', function(e, listingId) {
-      // do something with listingId
+      // operações quaisquer com listingId
     });
     ```
 
@@ -1377,7 +1377,7 @@
     ...
 
     $(this).on('listingUpdated', function(e, data) {
-      // do something with data.listingId
+      // operações quaisquer com data.listingId
     });
     ```
 
